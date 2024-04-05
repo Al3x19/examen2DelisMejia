@@ -1,7 +1,9 @@
 //like y no-like
 
 const like = document.querySelector('.like-btn');
-let noLike = document.querySelector('.no-like')
+const noLike = document.querySelector('.like-count')
+
+let contador = 0;
 
 const comen = document.querySelector('.comment-input');
 comen.value="";
@@ -9,14 +11,15 @@ const comentario = document.querySelector('.comment');
 
 
 
-like.addEventListener('click', mostrarOcultarFooter =>{
-    noLike.classList.toggle('no-like')
-    this.textContent='No me gusta'
-    
-    like.innerHTML = like.innerHTML=`No me gusta`
+like.addEventListener('click', e =>{
+    contador++;
+    noLike.textContent = contador;
+    like.textContent = 'No me gusta'
 })
 
+noLike.addEventListener('click', () =>{
 
+})
 // agregar comentario 
 
 addEventListener('click', e =>{
@@ -29,7 +32,6 @@ addEventListener('click', e =>{
         comen.value='';
         
     }
-    localStorage.setItem('comentario', JSON.stringify(comen));
 })
 
 // document.addEventListener('DOMContentLoaded', ()=>{
